@@ -36,15 +36,16 @@ LIBS:LPC1112FHN33_102
 LIBS:photodiode
 LIBS:swd
 LIBS:Multiboard
+LIBS:usb-micro-b
 LIBS:photodiode-cache
 EELAYER 25 0
 EELAYER END
 $Descr A4 11693 8268
 encoding utf-8
 Sheet 1 1
-Title ""
-Date ""
-Rev ""
+Title "Photodiode"
+Date "2018-01-24"
+Rev "1"
 Comp ""
 Comment1 ""
 Comment2 ""
@@ -103,8 +104,6 @@ Text GLabel 2110 1220 0    39   Input ~ 0
 MOSI
 Text GLabel 2110 1320 0    39   Input ~ 0
 CLK
-Text GLabel 1770 1520 0    39   Input ~ 0
-VCC
 Text GLabel 1770 1870 0    39   Input ~ 0
 GND
 $Comp
@@ -120,10 +119,6 @@ F 3 "" H 3210 1170 50  0001 C CNN
 $EndComp
 Text GLabel 3360 1170 2    39   Input ~ 0
 LED
-Text GLabel 3360 1420 2    39   Input ~ 0
-VCC
-Text GLabel 1150 1130 2    39   Input ~ 0
-VCC
 Text GLabel 1150 1230 2    39   Input ~ 0
 CLK
 Text GLabel 1150 1330 2    39   Input ~ 0
@@ -136,8 +131,6 @@ Text GLabel 1150 1630 2    39   Input ~ 0
 CE
 Text GLabel 1150 1730 2    39   Input ~ 0
 GND
-Text GLabel 1150 1830 2    39   Input ~ 0
-VCC
 Text Notes 2850 2060 0    60   ~ 0
 NOKIA 1202 LCD
 $Comp
@@ -187,12 +180,12 @@ $EndComp
 $Comp
 L photodiode D?
 U 1 1 5A630B76
-P 9220 1205
-F 0 "D?" H 9230 1335 50  0000 C CNN
-F 1 "photodiode" H 9220 1135 28  0000 C CNN
-F 2 "" H 9220 1205 50  0000 C CNN
-F 3 "" H 9220 1205 50  0000 C CNN
-	1    9220 1205
+P 1815 3015
+F 0 "D?" H 1825 3145 50  0000 C CNN
+F 1 "photodiode" H 1815 2945 28  0000 C CNN
+F 2 "" H 1815 3015 50  0000 C CNN
+F 3 "" H 1815 3015 50  0000 C CNN
+	1    1815 3015
 	1    0    0    -1  
 $EndComp
 $Comp
@@ -353,56 +346,52 @@ Wire Notes Line
 Wire Notes Line
 	6275 750  7935 750 
 Wire Notes Line
-	7935 750  7935 1600
-Wire Notes Line
-	7935 1600 6275 1600
-Wire Notes Line
 	6275 1600 6275 750 
 Text Notes 6615 1545 0    60   ~ 0
 Power\n
 $Comp
 L Multiboard U?
 U 1 1 5A65CCA5
-P 9760 1360
-F 0 "U?" H 9750 1070 28  0000 C CNN
-F 1 "Multiboard" H 9760 1020 31  0000 C CNN
-F 2 "" H 9760 1360 60  0001 C CNN
-F 3 "" H 9760 1360 60  0001 C CNN
-	1    9760 1360
+P 2355 3170
+F 0 "U?" H 2345 2880 28  0000 C CNN
+F 1 "Multiboard" H 2355 2830 31  0000 C CNN
+F 2 "" H 2355 3170 60  0001 C CNN
+F 3 "" H 2355 3170 60  0001 C CNN
+	1    2355 3170
 	1    0    0    -1  
 $EndComp
 Wire Wire Line
-	9370 1205 9410 1205
+	1965 3015 2005 3015
 Wire Wire Line
-	9410 1205 9410 1100
+	2005 3015 2005 2910
 Wire Wire Line
-	9410 1100 9530 1100
+	2005 2910 2125 2910
 Wire Wire Line
-	9070 1205 9035 1205
+	1665 3015 1630 3015
 Wire Wire Line
-	9035 1205 9035 1330
+	1630 3015 1630 3140
 Wire Wire Line
-	9035 1330 9425 1330
+	1630 3140 2020 3140
 Wire Wire Line
-	9425 1330 9425 1130
+	2020 3140 2020 2940
 Wire Wire Line
-	9425 1130 9530 1130
+	2020 2940 2125 2940
 Text GLabel 4680 3700 0    18   Input ~ 0
 MOSI
 Text GLabel 4680 3660 0    18   Input ~ 0
 MISO
 Text GLabel 4680 3340 0    18   Input ~ 0
 RESET
-NoConn ~ 9530 1180
-NoConn ~ 9530 1210
-NoConn ~ 9530 1340
-NoConn ~ 9530 1370
-NoConn ~ 9530 1420
-NoConn ~ 9530 1450
-NoConn ~ 9530 1480
-NoConn ~ 9530 1530
-NoConn ~ 9530 1560
-NoConn ~ 9530 1590
+NoConn ~ 2125 2990
+NoConn ~ 2125 3020
+NoConn ~ 2125 3150
+NoConn ~ 2125 3180
+NoConn ~ 2125 3230
+NoConn ~ 2125 3260
+NoConn ~ 2125 3290
+NoConn ~ 2125 3340
+NoConn ~ 2125 3370
+NoConn ~ 2125 3400
 Text GLabel 4680 3740 0    18   Input ~ 0
 SWD_CLK
 Text GLabel 4680 4010 0    18   Input ~ 0
@@ -412,67 +401,225 @@ UART_RX
 Text GLabel 4680 4170 0    18   Input ~ 0
 UART_TX
 Wire Notes Line
-	8235 825  8235 2450
+	830  2635 830  4260
 Wire Notes Line
-	8235 2450 11025 2450
+	830  4260 3620 4260
 Wire Notes Line
-	11025 2450 11025 825 
+	3620 4260 3620 2635
 Wire Notes Line
-	11025 825  8235 825 
-Text Notes 8535 2335 0    60   ~ 0
+	3620 2635 830  2635
+Text Notes 1130 4145 0    60   ~ 0
 Amplifier
 $Comp
 L Conn_01x03 J?
 U 1 1 5A672800
-P 10640 1210
-F 0 "J?" H 10640 1410 50  0000 C CNN
-F 1 "Conn_01x03" H 10640 1010 50  0000 C CNN
-F 2 "" H 10640 1210 50  0001 C CNN
-F 3 "" H 10640 1210 50  0001 C CNN
-	1    10640 1210
+P 3235 3020
+F 0 "J?" H 3235 3220 50  0000 C CNN
+F 1 "Conn_01x03" H 3235 2820 50  0000 C CNN
+F 2 "" H 3235 3020 50  0001 C CNN
+F 3 "" H 3235 3020 50  0001 C CNN
+	1    3235 3020
 	1    0    0    -1  
 $EndComp
-Text GLabel 10440 1110 0    18   Input ~ 0
-PWR1+v
-Text GLabel 10440 1210 0    18   Input ~ 0
-PWR2
-Text GLabel 10440 1310 0    18   Input ~ 0
-PWR1-v
-Text GLabel 9960 1320 2    18   Input ~ 0
-PWR1+v
-Text GLabel 9960 1360 2    18   Input ~ 0
-PWR2
-Text GLabel 9960 1400 2    18   Input ~ 0
-PWR1-v
+Text GLabel 3035 2920 0    18   Input ~ 0
++15V
+Text GLabel 3035 3120 0    18   Input ~ 0
+GND
+Text GLabel 2555 3130 2    18   Input ~ 0
++15V
+Text GLabel 2555 3210 2    18   Input ~ 0
+GND
 $Comp
 L Conn_01x02 J?
 U 1 1 5A672E52
-P 10720 1685
-F 0 "J?" H 10720 1785 50  0000 C CNN
-F 1 "Conn_01x02" H 10720 1485 50  0000 C CNN
-F 2 "" H 10720 1685 50  0001 C CNN
-F 3 "" H 10720 1685 50  0001 C CNN
-	1    10720 1685
+P 3315 3495
+F 0 "J?" H 3315 3595 50  0000 C CNN
+F 1 "Conn_01x02" H 3315 3295 50  0000 C CNN
+F 2 "" H 3315 3495 50  0001 C CNN
+F 3 "" H 3315 3495 50  0001 C CNN
+	1    3315 3495
 	1    0    0    -1  
 $EndComp
-Text GLabel 10520 1685 0    18   Input ~ 0
+Text GLabel 3115 3495 0    18   Input ~ 0
 OUT1a
-Text GLabel 10520 1785 0    18   Input ~ 0
+Text GLabel 3115 3595 0    18   Input ~ 0
 OUT1b
-Text GLabel 9250 1385 0    18   Input ~ 0
+Text GLabel 1845 3195 0    18   Input ~ 0
 OUT1a
-Text GLabel 9250 1445 0    18   Input ~ 0
+Text GLabel 1845 3255 0    18   Input ~ 0
 OUT1b
 Wire Wire Line
-	9530 1290 9485 1290
+	2125 3100 2080 3100
 Wire Wire Line
-	9485 1290 9485 1445
+	2080 3100 2080 3255
 Wire Wire Line
-	9485 1445 9250 1445
+	2080 3255 1845 3255
 Wire Wire Line
-	9530 1260 9455 1260
+	2125 3070 2050 3070
 Wire Wire Line
-	9455 1260 9455 1385
+	2050 3070 2050 3195
 Wire Wire Line
-	9455 1385 9250 1385
+	2050 3195 1845 3195
+$Comp
+L USB-MICRO-B U?
+U 1 1 5A68420C
+P 1865 6105
+F 0 "U?" H 1915 6265 28  0000 C CNN
+F 1 "USB-MICRO-B" H 1845 5945 20  0000 C CNN
+F 2 "" H 1865 6105 60  0001 C CNN
+F 3 "" H 1865 6105 60  0001 C CNN
+	1    1865 6105
+	1    0    0    -1  
+$EndComp
+$Comp
+L L L?
+U 1 1 5A684590
+P 1465 6405
+F 0 "L?" V 1415 6405 50  0000 C CNN
+F 1 "L" V 1540 6405 50  0000 C CNN
+F 2 "" H 1465 6405 50  0001 C CNN
+F 3 "" H 1465 6405 50  0001 C CNN
+	1    1465 6405
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	1465 6205 1585 6205
+Wire Wire Line
+	1465 6005 1465 6255
+Wire Wire Line
+	1585 6155 1465 6155
+Connection ~ 1465 6205
+Wire Wire Line
+	1585 6055 1465 6055
+Connection ~ 1465 6155
+Wire Wire Line
+	1585 6005 1465 6005
+Connection ~ 1465 6055
+Text GLabel 1465 6640 3    28   Input ~ 0
+GND
+Wire Wire Line
+	1465 6555 1465 6640
+Wire Wire Line
+	1465 6600 2155 6600
+Wire Wire Line
+	2155 6600 2155 6205
+Wire Wire Line
+	2155 6205 2125 6205
+Connection ~ 1465 6600
+NoConn ~ 2125 6155
+NoConn ~ 3035 3020
+NoConn ~ 2555 3170
+$Comp
+L +15V #PWR?
+U 1 1 5A685813
+P 7830 1020
+F 0 "#PWR?" H 7830 870 50  0001 C CNN
+F 1 "+15V" H 7830 1160 50  0000 C CNN
+F 2 "" H 7830 1020 50  0001 C CNN
+F 3 "" H 7830 1020 50  0001 C CNN
+	1    7830 1020
+	1    0    0    -1  
+$EndComp
+Text GLabel 7715 1140 3    28   Input ~ 0
++15V
+Wire Wire Line
+	7540 1060 7540 1095
+Wire Wire Line
+	7540 1095 7830 1095
+Wire Wire Line
+	7830 1095 7830 1020
+Wire Wire Line
+	7715 1140 7715 1095
+Connection ~ 7715 1095
+Text GLabel 1770 1520 0    28   Input ~ 0
+3V3
+Text GLabel 1150 1830 2    28   Input ~ 0
+3V3
+Text GLabel 1150 1130 2    28   Input ~ 0
+3V3
+Text GLabel 3360 1420 2    28   Input ~ 0
+3V3
+Text GLabel 5690 3790 2    28   Input ~ 0
+3V3
+Wire Wire Line
+	5600 3770 5640 3770
+Wire Wire Line
+	5640 3770 5640 3820
+Wire Wire Line
+	5640 3820 5600 3820
+Wire Wire Line
+	5690 3790 5640 3790
+Connection ~ 5640 3790
+Text GLabel 5600 3960 2    28   Input ~ 0
+GND
+Text GLabel 2125 6005 2    28   Input ~ 0
+3V3
+$Comp
+L Crystal_Small Y?
+U 1 1 5A688842
+P 6050 4365
+F 0 "Y?" H 6050 4465 50  0000 C CNN
+F 1 "12MHz" H 6050 4265 50  0000 C CNN
+F 2 "" H 6050 4365 50  0001 C CNN
+F 3 "" H 6050 4365 50  0001 C CNN
+	1    6050 4365
+	1    0    0    -1  
+$EndComp
+$Comp
+L C_Small C?
+U 1 1 5A688CE4
+P 5790 4625
+F 0 "C?" H 5800 4695 50  0000 L CNN
+F 1 "18pF" H 5800 4545 50  0000 L CNN
+F 2 "" H 5790 4625 50  0001 C CNN
+F 3 "" H 5790 4625 50  0001 C CNN
+	1    5790 4625
+	1    0    0    -1  
+$EndComp
+$Comp
+L C_Small C?
+U 1 1 5A688D53
+P 6355 4625
+F 0 "C?" H 6365 4695 50  0000 L CNN
+F 1 "18pF" H 6365 4545 50  0000 L CNN
+F 2 "" H 6355 4625 50  0001 C CNN
+F 3 "" H 6355 4625 50  0001 C CNN
+	1    6355 4625
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	5600 4250 6355 4250
+Wire Wire Line
+	6355 4250 6355 4525
+Wire Wire Line
+	5600 4300 5790 4300
+Wire Wire Line
+	5790 4300 5790 4525
+Wire Wire Line
+	5950 4365 5790 4365
+Connection ~ 5790 4365
+Wire Wire Line
+	6150 4365 6355 4365
+Connection ~ 6355 4365
+Text GLabel 6065 4840 3    28   Input ~ 0
+GND
+Wire Wire Line
+	6065 4840 6065 4780
+Wire Wire Line
+	5790 4780 6355 4780
+Wire Wire Line
+	6355 4780 6355 4725
+Wire Wire Line
+	5790 4725 5790 4780
+Connection ~ 6065 4780
+Wire Notes Line
+	785  5425 3485 5425
+Wire Notes Line
+	3485 5425 3485 7335
+Wire Notes Line
+	3485 7335 785  7335
+Wire Notes Line
+	785  7335 785  5425
+Text Notes 2040 7245 0    60   ~ 0
+USB
 $EndSCHEMATC

@@ -1,4 +1,4 @@
-update=22/01/2018 11:03:13
+update=24/01/2018 11:15:26
 version=1
 last_client=kicad
 [pcbnew]
@@ -27,7 +27,7 @@ NetIExt=net
 version=1
 [eeschema]
 version=1
-LibDir=../Library;../Library;../Library;../Library
+LibDir=../Library;../Library;../Library;../Library;../Library
 [eeschema/libraries]
 LibName1=power
 LibName2=device
@@ -67,3 +67,4 @@ LibName35=LPC1112FHN33_102
 LibName36=photodiode
 LibName37=swd
 LibName38=Multiboard
+LibName39=usb-micro-b

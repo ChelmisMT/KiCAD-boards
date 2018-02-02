@@ -1,4 +1,4 @@
-update=24/01/2018 11:15:26
+update=29/01/2018 06:00:49
 version=1
 last_client=kicad
 [pcbnew]
@@ -68,3 +68,4 @@ LibName36=photodiode
 LibName37=swd
 LibName38=Multiboard
 LibName39=usb-micro-b
+LibName40=BAS40-05
